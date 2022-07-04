@@ -1,0 +1,9 @@
+.achievments{
+    background-image: url(../../../images/newslatter-bg.18a5a13b714c3c31b1ef.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+}

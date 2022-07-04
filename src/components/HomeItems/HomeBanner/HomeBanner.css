@@ -1,0 +1,63 @@
+.overlay {
+    z-index: 1;
+}
+
+.overlay::after {
+    content: '';
+    background: #000;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: 0;
+}
+
+/* .swiper-button-prev {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+} */
+.swiper-button-prev::after{
+    content: '';
+}
+/* .swiper-button-next {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+} */
+.swiper-button-next::after{
+    content: '';
+}
+
+/* .swiper-button-next {
+    position: absolute !important;
+    top: 25px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.603) !important;
+}
+
+.swiper-button-next::after {
+    font-size: 10px !important;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.swiper-button-prev {
+    position: absolute !important;
+    left: 80% !important;
+    top: 25px !important;
+    left: 90% !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.603) !important;
+}
+
+.swiper-button-prev::after {
+    font-size: 10px !important;
+    font-weight: bolder;
+    color: #fff;
+} */
