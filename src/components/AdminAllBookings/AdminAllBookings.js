@@ -46,7 +46,7 @@ const AdminAllBookings = () => {
     }
 
     const handleStatusPending = id => {
-       
+
         const uri = `https://scenic-congaree-34824.herokuapp.com/bookingstatus/${id}`;
         fetch(uri, {
             method: 'PUT',
@@ -58,12 +58,12 @@ const AdminAllBookings = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                
+
             })
     }
 
     const handleStatusApproved = id => {
-        
+
         const uri = `https://scenic-congaree-34824.herokuapp.com/bookingstatus/${id}`;
         fetch(uri, {
             method: 'PUT',
@@ -75,7 +75,7 @@ const AdminAllBookings = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                
+
             })
     }
 
@@ -97,7 +97,7 @@ const AdminAllBookings = () => {
                     </div>
                 </Modal>
                 {/* MODAL AREA ENDS */}
-                <h1 className='text-4xl text-center mb-14'>All Events</h1>
+                <h1 className='text-4xl text-center mb-14'>All Bookings</h1>
                 <table className='w-full'>
                     <thead className='text-left bg-[#162B32] text-white'>
                         <tr>
@@ -125,10 +125,10 @@ const AdminAllBookings = () => {
                                     <td className='border text-center'>${booking.theEvent.cost * parseInt(booking.persons)}</td>
                                     <td className='border text-center'>
                                         {booking.status === 'pending' ?
-                                            
-                                        <button onClick={() => {handleStatusPending(booking._id)}} className='bg-cyan-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded'>Pending</button>
-                                        :
-                                        <button onClick={() => {handleStatusApproved(booking._id)}} className='bg-green-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded'>Approved</button>
+
+                                            <button onClick={() => { handleStatusPending(booking._id) }} className='bg-cyan-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded'>Pending</button>
+                                            :
+                                            <button onClick={() => { handleStatusApproved(booking._id) }} className='bg-green-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded'>Approved</button>
                                         }
                                     </td>
 
