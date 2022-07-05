@@ -1,18 +1,18 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../../firebaseInit';
 import logo from '../../../images/logo-w.png';
 import toast, { Toaster } from 'react-hot-toast';
-
 const MenuHeader = () => {
     const [user] = useAuthState(auth);
 
     return (
-        <section className='menu-header sticky top-0 z-50'>
-            <Toaster/>
+        <section className='menu-header sticky top-0 z-20'>
+            <Toaster />
             {/* <!-- This example requires Tailwind CSS v2.0+ --> */}
+
             <nav className="bg-black opacity-80">
                 <div className="container mx-auto">
                     <div className="relative flex items-center justify-between h-16">
@@ -58,12 +58,13 @@ const MenuHeader = () => {
 
                                     {user && <NavLink to="/bookings" className="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Bookings</NavLink>}
                                     {user && <NavLink to="/allevents" className="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Events</NavLink>}
+                                    {user && <NavLink to="/addevents" className="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add Events</NavLink>}
                                 </div>
                             </div>
                         </div>
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                             {user ?
-                                <button onClick={()=>signOut(auth).then(()=>{toast.success('Loged Out Sucessfully',{className:'z-50', duration: 3000, position: 'bottom-center', icon: <i className="fa-solid fa-right-from-bracket text-red-600"></i>, iconTheme:{primary: '#DC2626', secondary:'#fff'}})})} className='bg-red-600 hover:bg-red-700 text-white py-2 px-5 rounded'>Logout</button>
+                                <button onClick={() => signOut(auth).then(() => { toast.success('Loged Out Sucessfully', { className: 'z-50', duration: 3000, position: 'bottom-center', icon: <i className="fa-solid fa-right-from-bracket text-red-600"></i>, iconTheme: { primary: '#DC2626', secondary: '#fff' } }) })} className='bg-red-600 hover:bg-red-700 text-white py-2 px-5 rounded'>Logout</button>
                                 :
                                 <button className='bg-red-600 hover:bg-red-700 text-white py-2 px-5 rounded'><Link to='/login'>Login</Link></button>
                             }

@@ -11,6 +11,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyEvents from './components/AllEvents/MyEvents/MyEvents';
 import AdminAllEvents from './components/AllEvents/AdminAllEvents/AdminAllEvents';
 import AdminAllBookings from './components/AdminAllBookings/AdminAllBookings';
+import AdminAddEvents from './components/AllEvents/AdminAddEvents/AdminAddEvents';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -21,10 +23,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/about' element={<About> </About>}></Route>
         <Route path='/booking/:id' element={<PrivateRoute><BookingForm></BookingForm></PrivateRoute>}></Route>
         <Route path='/myevents' element={<PrivateRoute><MyEvents></MyEvents></PrivateRoute>}></Route>
         <Route path='/allevents' element={<PrivateRoute><AdminAllEvents></AdminAllEvents></PrivateRoute>}></Route>
         <Route path='/bookings' element={<PrivateRoute><AdminAllBookings></AdminAllBookings></PrivateRoute>}></Route>
+        <Route path='/addevents' element={<PrivateRoute><AdminAddEvents></AdminAddEvents></PrivateRoute>}></Route>
+        
 
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>

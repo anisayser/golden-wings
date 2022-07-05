@@ -35,7 +35,7 @@ const BookingForm = () => {
         const phone = phoneRef.current.value;
         const persons = personsRef.current.value;
         const message = messageRef.current.value;
-        const bookingData = { name, email, phone, persons, message, theEvent };
+        const bookingData = { name, email, phone, persons, message, theEvent, status: 'pending' };
 
         fetch('https://scenic-congaree-34824.herokuapp.com/mybooking', {
             method: 'POST',
@@ -60,10 +60,10 @@ const BookingForm = () => {
         <section className='booking-form mt-20'>
             <Toaster />
             <div className="container mx-auto">
-                <div>
 
+                <div className='px-2'>
                     <form onSubmit={handleBooking}>
-                        <div className='flex flex-col items-center w-1/3 mx-auto rounded-xl shadow-xl'>
+                        <div className='flex flex-col items-center w-full sm:w-2/3 lg:w-[33rem] mx-auto rounded-xl shadow-xl'>
                             <div className='flex justify-between w-full bg-[#162B32] text-white p-5 rounded-t-xl shadow-xl'>
                                 <h1 className='text-2xl'>Book This Tour</h1>
                                 <p><span className='text-2xl text-red-600'>$75</span> Per Person</p>
@@ -88,6 +88,7 @@ const BookingForm = () => {
                         </div>
                     </form>
                 </div>
+                
             </div>
 
         </section>
