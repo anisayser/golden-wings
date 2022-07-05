@@ -9,6 +9,7 @@ const AdminAllBookings = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [deleteId, setDeleteId] = useState(false);
     const [load, setLoad] = useState(false);
+    const [statusLoad, setStatusLoad] = useState(false);
 
     const [bookingStatus, setBookingStatus] = useState(false);
 
@@ -46,6 +47,7 @@ const AdminAllBookings = () => {
     }
 
     const handleStatusPending = id => {
+        setStatusLoad(true);
         const uri = `https://scenic-congaree-34824.herokuapp.com/bookingstatus/${id}`;
         fetch(uri, {
             method: 'PUT',
@@ -57,12 +59,13 @@ const AdminAllBookings = () => {
             .then(res => res.json())
             .then(data => { })
             .finally(() => {
+                setStatusLoad(false)
                 toast.success('Booking Approved Sucessfully', { duration: 3000 })
             })
     }
 
     const handleStatusApproved = id => {
-
+        setStatusLoad(true);
         const uri = `https://scenic-congaree-34824.herokuapp.com/bookingstatus/${id}`;
         fetch(uri, {
             method: 'PUT',
@@ -74,6 +77,7 @@ const AdminAllBookings = () => {
             .then(res => res.json())
             .then(data => { })
             .finally(() => {
+                setStatusLoad(false)
                 toast.success('The Booking is Pending Now.', { duration: 3000 })
             })
     }
@@ -138,12 +142,12 @@ const AdminAllBookings = () => {
                                     <td className='border text-center'>${booking.theEvent.cost}</td>
                                     <td className='border pl-5'>{booking.persons}</td>
                                     <td className='border text-center'>${booking.theEvent.cost * parseInt(booking.persons)}</td>
-                                    <td className='border text-center'>
+                                    <td className='border'>
                                         {booking.status === 'pending' ?
 
-                                            <button onClick={() => { handleStatusPending(booking._id) }} className='bg-cyan-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded'>Pending</button>
+                                            <button onClick={() => { handleStatusPending(booking._id) }} className='bg-cyan-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded flex items-center space-x-2 mx-auto'><span>Pending</span> {statusLoad && <div className='animate-bounce'>...</div>}</button>
                                             :
-                                            <button onClick={() => { handleStatusApproved(booking._id) }} className='bg-green-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded'>Approved</button>
+                                            <button onClick={() => { handleStatusApproved(booking._id) }} className='bg-green-600 hover:bg-[#162B32] transition ease-in text-white py-2 px-4 rounded flex items-center space-x-2 mx-auto'><span>Approved</span> {statusLoad && <div className='animate-bounce'>...</div>}</button>
                                         }
                                     </td>
 
