@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../../firebaseInit';
-import logo from '../../../images/logo-w.png';
+import logo from '../../../images/newLogo.png';
 import toast, { Toaster } from 'react-hot-toast';
 const MenuHeader = () => {
     const [user] = useAuthState(auth);

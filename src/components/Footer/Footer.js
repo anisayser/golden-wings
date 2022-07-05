@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import fg from '../../images/fg-1.png';
-import logo from '../../images/logo-w.png';
+import logo from '../../images/newLogo.png';
 import './Footer.css';
 
 
@@ -83,14 +83,14 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='bg-black py-5'>
+            <div className='bg-black pt-5 pb-3'>
                 <div className="container mx-auto">
                     <div className="grid grid-cols-3 gap-4 text-center">
                         <div>
                             <p>Copyright 2022 Golden Wings | Design Cloned By Anis Ayser</p>
                         </div>
                         <div>
-                            <img className='mx-auto' src={logo} alt="" />
+                            <img className='mx-auto h-10 -mt-2' src={logo} alt="" />
                         </div>
                         <div>
                             <p><Link to='/'>Terms & Conditions</Link> | <Link to='/'>Privacy Policy</Link></p>
