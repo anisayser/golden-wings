@@ -46,7 +46,6 @@ const AdminAllBookings = () => {
     }
 
     const handleStatusPending = id => {
-
         const uri = `https://scenic-congaree-34824.herokuapp.com/bookingstatus/${id}`;
         fetch(uri, {
             method: 'PUT',
@@ -56,9 +55,9 @@ const AdminAllBookings = () => {
             body: JSON.stringify({ status: 'approved' })
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
-
+            .then(data => { })
+            .finally(() => {
+                toast.success('Booking Approved Sucessfully', { duration: 3000 })
             })
     }
 
@@ -73,9 +72,9 @@ const AdminAllBookings = () => {
             body: JSON.stringify({ status: 'pending' })
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
-
+            .then(data => { })
+            .finally(() => {
+                toast.success('The Booking is Pending Now.', { duration: 3000 })
             })
     }
 
@@ -113,7 +112,23 @@ const AdminAllBookings = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        {bookings.length === 0 ?
+
+                            [...Array(5).keys()].map(number =>
+                                <tr key={number} className='animate-pulse'>
+                                    <td className='border p-3 '><div className='bg-slate-400 rounded-lg w-32 h-16'></div></td>
+                                    <td className='border pl-5'><div className='h-3 w-52 rounded-full bg-slate-400'></div></td>
+                                    <td className='border pl-5'><div className='h-3 w-48 rounded-full bg-slate-400'></div></td>
+                                    <td className='border pl-5'><div className='h-3 w-40 rounded-full bg-slate-400'></div></td>
+                                    <td className='border pl-5'><div className='h-3 w-16 rounded-full bg-slate-400'></div></td>
+                                    <td className='border pl-5'><div className='h-3 w-16 rounded-full bg-slate-400'></div></td>
+                                    <td className='border pl-5'><div className='h-3 w-16 rounded-full bg-slate-400'></div></td>
+                                    <td className='border text-center'><button className='bg-slate-400 py-5 px-9 rounded'></button></td>
+                                    <td className='border text-center'><button className='bg-slate-400 py-5 px-9 rounded'></button></td>
+                                </tr>
+                            )
+
+                            :
                             bookings.map(booking => (
                                 <tr key={booking._id}>
                                     <td className='border p-3 '><img className='rounded-lg w-32' src={booking.theEvent.img} alt="" /></td>

@@ -21,7 +21,23 @@ const Events = () => {
 
 
 
-                    {
+                    {events.length === 0 ?
+                        [...Array(3).keys()].map(number =>
+                            <div key={number} className='shadow-xl rounded-lg animate-pulse'>
+                                <div>
+                                    <div className='bg-slate-400 w-full h-60 rounded-t-lg'></div>
+                                </div>
+                                <div className='space-y-8 p-5'>
+                                    <div className='h-3 w-32 rounded-full bg-slate-400'></div>
+                                    <div className='flex justify-between'>
+                                        <button className='py-5 px-12 rounded-full bg-slate-400'></button>
+                                        <div className='h-2 w-16 bg-slate-400 rounded-full'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            )
+
+                        :
                         events.map(event => (
                             <div key={event._id} className='shadow-xl rounded-lg'>
                                 <div>

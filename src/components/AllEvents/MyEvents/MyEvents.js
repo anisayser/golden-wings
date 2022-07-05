@@ -42,7 +42,7 @@ const MyEvents = () => {
 
     }
 
-
+    {/* <h1 className='text-center text-8xl col-span-2'>You Didn't Book Any Event Yet.</h1> */ }
 
     return (
         <section className='my-events py-20'>
@@ -50,7 +50,23 @@ const MyEvents = () => {
                 <h1 className='text-center text-4xl mb-14'>My Events</h1>
                 <Toaster />
                 <div className="grid grid-cols-2 gap-8">
-                    {myEvents.length === 0 ? <h1 className='text-center text-8xl col-span-2'>You Didn't Book Any Event Yet.</h1> :
+                    {myEvents.length === 0 ?
+                        [...Array(2).keys()].map(number =>
+                            <div key={number} className='animate-pulse flex space-x-5 shadow-lg p-5 rounded-lg relative'>
+                                <div className="w-80 h-52 rounded-lg bg-slate-400"></div>
+                                <div className='space-y-8'>
+                                    <div className='bg-slate-400 h-3 w-52 rounded-full'></div>
+                                    {/* <p>Name: {events.name}</p> */}
+                                    <div className='bg-slate-400 h-2 w-16 rounded-full'></div>
+                                    <div className='bg-slate-400 h-2 w-36 rounded-full'></div>
+                                    <div className='bg-slate-400 h-2 w-32 rounded-full'></div>
+                                    <div className='absolute right-0 bottom-0'>
+                                        <button className='py-4 px-8 bg-slate-400  rounded-br-lg rounded-tl-lg shadow-xl'></button>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                        :
                         myEvents.map(events => (
                             <div key={events._id} className='flex space-x-5 shadow-lg p-5 rounded-lg relative'>
                                 <img src={events.theEvent.img} className="rounded-lg" alt="" />

@@ -66,7 +66,7 @@ const BookingForm = () => {
                         <div className='flex flex-col items-center w-full sm:w-2/3 lg:w-[33rem] mx-auto rounded-xl shadow-xl'>
                             <div className='flex justify-between w-full bg-[#162B32] text-white p-5 rounded-t-xl shadow-xl'>
                                 <h1 className='text-2xl'>Book This Tour</h1>
-                                <p><span className='text-2xl text-red-600'>$75</span> Per Person</p>
+                                <p><span className='text-2xl text-red-600'>${theEvent.cost}</span> Per Person</p>
                             </div>
                             <div className='space-y-5 p-5'>
 

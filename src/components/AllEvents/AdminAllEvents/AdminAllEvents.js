@@ -49,18 +49,18 @@ const AdminAllEvents = () => {
         <section className='admin-all-events py-20'>
             <div className="container mx-auto">
                 {/* MODAL AREA */}
-                    <Modal ariaHideApp={false} isOpen={modalOpen} className="flex items-center justify-center h-screen z-50">
-                        <div className='bg-white rounded-lg shadow-lg w-96 p-5 border text-center space-y-5'>
+                <Modal ariaHideApp={false} isOpen={modalOpen} className="flex items-center justify-center h-screen z-50">
+                    <div className='bg-white rounded-lg shadow-lg w-96 p-5 border text-center space-y-5'>
                         <i class=""></i>
-                            {load ? <img className='w-24 mx-auto' src={spinner} alt="" /> : <i className="fa-solid fa-face-frown text-5xl text-amber-600"></i>}
-                            <h1 className='text-2xl'>Are You Sure You Want to Delete?</h1>
+                        {load ? <img className='w-24 mx-auto' src={spinner} alt="" /> : <i className="fa-solid fa-face-frown text-5xl text-amber-600"></i>}
+                        <h1 className='text-2xl'>Are You Sure You Want to Delete?</h1>
 
-                            <div className='space-x-5'>
-                                <button onClick={() => setModalOpen(false)} className='text-red-600 hover:text-white border border-red-600 hover:border-transparent hover:bg-[#162B32] py-1 px-6 rounded'>No</button>
-                                <button onClick={() => { handleDelete(deleteId) }} className='text-white bg-red-600 hover:bg-[#162B32] py-1 px-6 rounded'>Yes</button>
-                            </div>
+                        <div className='space-x-5'>
+                            <button onClick={() => setModalOpen(false)} className='text-red-600 hover:text-white border border-red-600 hover:border-transparent hover:bg-[#162B32] py-1 px-6 rounded'>No</button>
+                            <button onClick={() => { handleDelete(deleteId) }} className='text-white bg-red-600 hover:bg-[#162B32] py-1 px-6 rounded'>Yes</button>
                         </div>
-                    </Modal>
+                    </div>
+                </Modal>
                 {/* MODAL AREA ENDS */}
                 <h1 className='text-4xl text-center mb-14'>All Events</h1>
                 <table className='w-full'>
@@ -73,7 +73,17 @@ const AdminAllEvents = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        {events.length === 0 ?
+                            [...Array(5).keys()].map(number =>
+                                <tr key={number} className='animate-pulse'>
+                                    <td className='border p-3 '><div className='bg-slate-400 rounded-lg w-32 h-16'></div></td>
+                                    <td className='border pl-5'><div className='h-3 w-52 rounded-full bg-slate-400'></div></td>
+                                    <td className='border text-center pl-5'><div className='h-3 w-16 rounded-full bg-slate-400'></div></td>
+                                    <td className='border text-center'><button className='bg-slate-400 py-5 px-9 rounded'></button></td>
+                                </tr>
+                            )
+
+                            :
                             events.map(event => (
                                 <tr key={event._id}>
                                     <td className='border p-3 '><img className='rounded-lg w-32' src={event.img} alt="" /></td>
