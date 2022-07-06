@@ -3,10 +3,10 @@ import React from 'react';
 const InfoHeader = () => {
     return (
         <section className='info-header bg-black text-white'>
-            <div className="container mx-auto">
+            <div className="container mx-auto px-5">
                 <nav className='flex justify-between py-2 text-sm'>
                     <div className='flex space-x-3'>
-                        <div className='flex items-center space-x-1'>
+                        <div className='sm:flex items-center space-x-1 hidden'>
                             <i className="fa-solid fa-phone"></i>
                             <p>+88014652844</p>
                         </div>

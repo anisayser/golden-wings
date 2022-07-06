@@ -10,8 +10,8 @@ const Footer = () => {
         <section className='footer text-white mt-20'>
 
             <div className='pt-20 pb-5 footer-one bg-[#2D373C] bg-fixed'>
-                <div className="container mx-auto">
-                    <div className="grid grid-cols-4 gap-4">
+                <div className="container mx-auto px-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div className='space-y-5'>
                             <p>Duis rutrum nisl urna. Maecenas vel libero faucibus nisi venenatis hendrerit a id lectus. Suspendissendt molestie turpis nec lacinia vehicula.</p>
 
@@ -62,7 +62,7 @@ const Footer = () => {
                         </div>
 
 
-                        <div className='col-span-4 border mt-20'>
+                        <div className='md:col-span-2 lg:col-span-4 border mt-20'>
                             {/* BORDER */}
                         </div>
 
@@ -85,7 +85,7 @@ const Footer = () => {
 
             <div className='bg-black pt-5 pb-3'>
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                         <div>
                             <p>Copyright 2022 Golden Wings | Design Cloned By Anis Ayser</p>
                         </div>

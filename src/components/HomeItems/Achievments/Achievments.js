@@ -12,8 +12,8 @@ const Achievments = () => {
     return (
         <section className='achievments py-32'>
             <div className="overlay-test"></div>
-            <div className="container mx-auto">
-                <div className="grid grid-cols-4 gap-8 text-white">
+            <div className="container mx-auto px-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 text-white">
                     <div className='flex flex-col items-center justify-center p-10 border-2 border-red-600'>
                         <img src={svg2} alt="" />
                         <h1 className='text-4xl mt-5'> <CountUp end={500} duration={5}/> +</h1>

@@ -40,11 +40,11 @@ const HomeBanner = () => {
             >
                 <SwiperSlide>
                     <div>
-                        <div className="container mx-auto relative">
-                            <div className='absolute z-10 space-y-5 mt-60'>
-                                <h1 className='uppercase text-6xl text-white '>ENJOY YOUR HOLLIDAYS <br /> WITH golden wings</h1>
-                                <p className='text-white font-sm'>A charitable organization or charity is an organization whose primary objectives are philanthr</p>
-                                <button className='bg-red-600 hover:bg-red-700 py-3 px-5 text-white'>View Adventures</button>
+                        <div className="container mx-auto relative px-5">
+                            <div className='absolute z-10 space-y-1 md:space-y-5 mt-2 md:mt-10 xl:mt-60'>
+                                <h1 className='uppercase text-xl md:text-4xl lg:text-6xl text-white '>ENJOY YOUR HOLLIDAYS <br /> WITH golden wings</h1>
+                                <p className='text-white text-sm sm:text-base'>A charitable organization or charity is an organization whose primary objectives are philanthr</p>
+                                <button className='bg-red-600 hover:bg-red-700 py-1 px-2 md:py-3 md:px-5 text-white text-sm sm:text-base'>View Adventures</button>
                             </div>
                         </div>
                         <div className='overlay'>
@@ -54,18 +54,18 @@ const HomeBanner = () => {
                         <div className="swiper-button-prev absolute top-0">
                             <i className="fa-solid fa-arrow-up py-2 px-3 rounded-full border border-red-600 text-red-600"></i>
                         </div>
-                    
+
                         <div className="swiper-button-next">
                             <i className="fa-solid fa-arrow-down py-2 px-3 rounded-full border border-red-600 text-red-600"></i>
                         </div>
                     </div>
-                    
-                    
+
+
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
                         <div className="container mx-auto relative">
-                            <div className='absolute z-10 space-y-5 mt-60'>
+                            <div className='absolute z-10 space-y-5 mt-2 md:mt-10 xl:mt-60'>
                                 <h1 className='uppercase text-6xl text-white '>Let's your journey begins <br /> WITH <span className='text-red-600'>golden wings</span> </h1>
                                 <p className='text-white font-sm'>A charitable organization or charity is an organization whose primary objectives are philanthr</p>
                                 <button className='bg-red-600 hover:bg-red-700 py-3 px-5 text-white'>View Adventures</button>
@@ -80,11 +80,11 @@ const HomeBanner = () => {
                         <div className="swiper-button-next">
                             <i className="fa-solid fa-arrow-down"></i>
                         </div>
-                        
+
                         <div className="swiper-button-prev absolute top-0">
                             <i className="fa-solid fa-arrow-up py-2 px-3 rounded-full border border-red-600 text-red-600"></i>
                         </div>
-                    
+
                         <div className="swiper-button-next">
                             <i className="fa-solid fa-arrow-down py-2 px-3 rounded-full border border-red-600 text-red-600"></i>
                         </div>

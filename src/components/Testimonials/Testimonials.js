@@ -17,12 +17,20 @@ const Testimonials = () => {
     return (
         <section className='testimonials my-20 py-32'>
             <div className='overlay-test'></div>
-            <div className="container mx-auto z-40">
+            <div className="container mx-auto px-5 z-40">
                 <h1 className='text-4xl text-white z-50'>Travellers Review</h1>
                 <p className='text-white'>Duis rutrum nisl urna maecenas vel libero faucibus nisi vene natis hendrerit aid lectus suspendissendt.</p>
                 <Swiper
                     spaceBetween={50}
-                    slidesPerView={3}
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 2
+                        },
+                        1024: {
+                            slidesPerView: 3
+                        },
+                    }}
+                    slidesPerView={1}
                     loop={true}
                     navigation={true}
                     modules={[Navigation]}
